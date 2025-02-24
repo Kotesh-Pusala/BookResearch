@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Research</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .navbar-brand {
+            color: red !important;
+        }
+
+        .hero {
+            background: url('library.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .card.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Book Research</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#signupform">Signup</button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero text-center text-white">
+        <div class="container py-5">
+            <h1>Search Your Favorite Books</h1>
+            <p>Find detailed information about a variety of books and their research.</p>
+            <form class="d-flex justify-content-center">
+                <input class="form-control w-50" type="search" placeholder="Search for books..." aria-label="Search">
+                <button class="btn btn-primary ms-2" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h2>Popular Books</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#"><img src="wingsoffire.webp" class="card-img-top" alt="Book Image" width="100px"
+                            height="500px"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Wings Of Fire</h5>
+                        <p class="card-text">Wings of Fire is a memoir by A.P.J. Abdul Kalam, the former President of India. It tells the story of his inspiring journey from a small town to becoming a renowned scientist, providing valuable life lessons and insights along the way.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#"><img src="next five.jpg" class="card-img-top" alt="Book Image" width="100px" height="500px"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Your Next Five Moves</h5>
+                        <p class="card-text">Your Next Five Moves explores how you can improve your business and your life by learning how to strategize. Patrick Bet-David shares how to master the art of Business Strategy with actionable advice and systems. Great book for everyone looking to find their path.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="#"><img src="artofalone.jpg" class="card-img-top" alt="Book Image" width="200px" height="500px"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Art of Being Alone </h5>
+                        <p class="card-text">“The Art of Being ALONE: Solitude Is My HOME, Loneliness Was My Cage" is a profound exploration of the distinction between solitude and loneliness. The author skillfully delves into the emotional journey from feeling trapped in loneliness to finding peace and comfort in solitude.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label"><strong>Username/Email:</strong></label>
+                            <input type="text" id="username" class="form-control" placeholder="Enter Your Username"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><strong>Password:</strong></label>
+                            <input type="password" class="form-control" placeholder="Enter password" minlength="6"
+                                maxlength="10" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="signupform" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Signup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label"><strong>Username:</strong></label>
+                            <input type="text" id="username" class="form-control" placeholder="Enter Your Username"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"><strong>Email:</strong></label>
+                            <input type="email" id="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label"><strong>Mobile No:</strong></label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Mobile No" minlength="10" maxlength="10" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><strong>Password:</strong></label>
+                            <input type="password" class="form-control" placeholder="Enter password" minlength="6"
+                                maxlength="10" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><strong>Confirm Password:</strong></label>
+                            <input type="password" class="form-control" placeholder="Re-Enter password" minlength="6"
+                                maxlength="10" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Signup</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Email:</strong> support@bookresearch.com</p>
+                    <p><strong>Phone:</strong> +91 98765 43210</p>
+                    <p><strong>Address:</strong> 123 Book Lane, Knowledge City, India</p>
+                    <p><strong>Working Hours:</strong> Mon - Fri, 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Book Research. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.card').forEach((card) => {
+                card.classList.add('loaded');
+            });
+        });
+    </script>
+</body>
+
+</html>
